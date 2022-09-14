@@ -54,9 +54,9 @@
             }%`;
         };
         count();
-        document.querySelector("#multi_page").addEventListener("DOMSubtreeModified", () => {
-            console.log("页面发生变化, 重新统计");
-            count();
-        });
+        // document.querySelector("#multi_page").addEventListener("DOMSubtreeModified", () => {
+        //     console.log("页面发生变化, 重新统计");
+        //     count();
+        // });
     }, 2500);
 })();
