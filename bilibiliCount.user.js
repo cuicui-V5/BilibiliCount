@@ -49,9 +49,10 @@
 
             //在页面中添加
             let tittle = document.querySelector("#multi_page > div.head-con > div.head-left > h3");
-            tittle.innerHTML = `已观看${watchedHur}/${totalHur}h,${
-                (watchedHur / totalHur).toFixed(2) * 100
-            }%`;
+            tittle.innerHTML = `已观看${watchedHur}/${totalHur}h,${(
+                (watchedHur / totalHur) *
+                100
+            ).toFixed(2)}%`;
         };
         count();
         // document.querySelector("#multi_page").addEventListener("DOMSubtreeModified", () => {
