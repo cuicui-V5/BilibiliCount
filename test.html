@@ -1,0 +1,20 @@
+    <body>
+        <button>click me</button>
+        <div>0</div>
+        <script>
+            let btn = document.querySelector("button");
+            let div = document.querySelector("div");
+            let timer = null;
+
+            btn.addEventListener("click", function (e) {
+                if (timer) {
+                    //如果定时器存在, 那么就退出不执行
+                    return;
+                }
+                timer = setTimeout(() => {
+                    div.innerHTML++;
+                    timer = null; //执行完毕之后清空定时器
+                }, 1000);
+            });
+        </script>
+    </body>
