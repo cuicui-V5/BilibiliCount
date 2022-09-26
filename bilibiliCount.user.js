@@ -15,8 +15,10 @@
     setTimeout(function () {
         let lis = document.querySelectorAll(".list-box>li");
         let timer = null;
-        let count = function () {
-            // 使用节流
+
+        count();
+        function count() {
+            // 使用防抖
             clearTimeout(timer);
             timer = setTimeout(function () {
                 console.log("统计中.....");
@@ -57,13 +59,13 @@
                 let tittle = document.querySelector(
                     "#multi_page > div.head-con > div.head-left > h3"
                 );
-                tittle.innerHTML = `已观看${watchedHur}/${totalHur}h,${(
+                tittle.innerHTML = `${watchedHur}/${totalHur}h,${(
                     (watchedHur / totalHur) *
                     100
                 ).toFixed(2)}%`;
+                tittle.style.fontSize = "14px";
             }, 2000);
-        };
-        count();
+        }
 
         //当分集切换重新统计
         var targetNode = document.querySelector(".cur-list");
