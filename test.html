@@ -1,20 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #a {
+                width: 200px;
+                border: 2px blue solid;
+                position: relative;
+            }
+            /* div::after {
+                display: block;
+                content: "";
+                width: 30px;
+                border-bottom: 8px red solid;
+            } */
+        </style>
+    </head>
     <body>
-        <button>click me</button>
-        <div>0</div>
+        <div id="a">test</div>
         <script>
-            let btn = document.querySelector("button");
-            let div = document.querySelector("div");
-            let timer = null;
+            let bar = document.querySelector("div");
+            let progress = document.createElement("div");
+            progress.style.backgroundColor = "red";
+            progress.style.width = "20px";
+            progress.style.height = "5px";
+            progress.style.position = "absolute";
+            progress.style.bottom = "0px";
 
-            btn.addEventListener("click", function (e) {
-                if (timer) {
-                    //如果定时器存在, 那么就退出不执行
-                    return;
-                }
-                timer = setTimeout(() => {
-                    div.innerHTML++;
-                    timer = null; //执行完毕之后清空定时器
-                }, 1000);
-            });
+            bar.appendChild(progress);
         </script>
     </body>
+</html>

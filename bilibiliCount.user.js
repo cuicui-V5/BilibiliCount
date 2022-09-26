@@ -26,6 +26,7 @@
                 let watchedSec = 0;
                 let totalHur = 0;
                 let watchedHur = 0;
+                let rate = 0;
                 let flag = true; //假如为假, 就不再计算已看时间
 
                 for (let i = 0; i < lis.length; i++) {
@@ -54,16 +55,23 @@
                 }
                 totalHur = (totalSec / 3600).toFixed(1);
                 watchedHur = (watchedSec / 3600).toFixed(1);
-
-                //在页面中添加
+                rate = ((watchedHur / totalHur) * 100).toFixed(2);
+                //在页面中添加文字
                 let tittle = document.querySelector(
                     "#multi_page > div.head-con > div.head-left > h3"
                 );
-                tittle.innerHTML = `${watchedHur}/${totalHur}h,${(
-                    (watchedHur / totalHur) *
-                    100
-                ).toFixed(2)}%`;
+                tittle.innerHTML = `${watchedHur}/${totalHur}h,${rate}%`;
                 tittle.style.fontSize = "14px";
+                // 绘制进度条
+                let bar = document.querySelector(".head-con");
+                let progress = document.createElement("div");
+                progress.style.backgroundColor = "#03a0d6";
+                progress.style.width = bar.offsetWidth * (rate / 100) + "px";
+                progress.style.height = "6px";
+                bar.style.position = "relative";
+                progress.style.position = "absolute";
+                progress.style.bottom = "-6px";
+                bar.appendChild(progress);
             }, 2000);
         }
 
