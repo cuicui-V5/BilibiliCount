@@ -34,7 +34,7 @@
                 for (let i = 0; i < lis.length; i++) {
                     const TimeStr = lis[i].querySelector(".duration").innerHTML;
                     const TimeArr = TimeStr.split(":");
-                    console.log(TimeArr); //['02', '34']
+                    // console.log(TimeArr); //['02', '34']
                     if (TimeArr.length === 3) {
                         totalSec += Number(TimeArr[0]) * 3600;
                         totalSec += Number(TimeArr[1]) * 60;
@@ -48,7 +48,7 @@
 
                     if (flag) {
                         watchedSec = totalSec;
-                        console.log("正在观看" + i);
+                        // console.log("正在观看" + i);
                     }
 
                     if (lis[i].className == "watched on" || lis[i].className == "on") {
@@ -68,7 +68,9 @@
                 let bar = document.querySelector(".head-con");
                 let progress = document.createElement("div");
                 progress.style.backgroundColor = "#03a0d6";
-                progress.style.width = bar.offsetWidth * (rate / 100) + "px";
+                let barWidth = bar.offsetWidth * (rate / 100) - 32;
+                console.log(barWidth);
+                progress.style.width = barWidth + "px";
                 progress.style.height = "6px";
                 bar.style.position = "relative";
                 progress.style.position = "absolute";
