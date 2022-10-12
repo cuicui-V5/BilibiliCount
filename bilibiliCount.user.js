@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         自动统计视频总时长
+// @name         自动统计哔哩哔哩视频观看百分比, 总时长
 // @namespace    https://github.com/cuicui-V5/BilibiliCount
 // @version      0.1
 // @description  一个相当简单的油猴脚本, 统计bilibili合集总时长, 观看百分比, 统计后展示在页面上
