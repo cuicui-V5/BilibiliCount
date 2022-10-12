@@ -9,6 +9,7 @@
 // @grant        none
 // @updateURL      https://github.com/cuicui-V5/BilibiliCount/raw/master/bilibiliCount.user.js
 // @downloadURL    https://github.com/cuicui-V5/BilibiliCount/raw/master/bilibiliCount.user.js
+// @license MIT
 // ==/UserScript==
 
 (function () {
