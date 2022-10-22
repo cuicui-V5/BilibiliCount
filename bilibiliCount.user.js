@@ -77,6 +77,9 @@
                 progress.style.position = "absolute";
                 progress.style.bottom = "-6px";
                 bar.appendChild(progress);
+                document.querySelector(
+                    "#multi_page > div.head-con > div.head-right"
+                ).style.display = "none";
             }, 2000);
         }
 
