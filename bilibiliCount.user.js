@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         统计bilibili合集总时长与观看百分比
 // @namespace    https://github.com/cuicui-V5/BilibiliCount
-// @version      0.2.0
+// @version      0.2.5
 // @description  统计bilibili合集总时长与观看百分比
 // @author       You
 // @match        https://www.bilibili.com/video/*
@@ -105,7 +105,14 @@
                 } else {
                     bar = document.querySelector(".head-con");
                 }
+                // 先检查是否有进度条, 如果有就移除
+                let oldProgress = bar.querySelector(".progressBar");
+                if (oldProgress) {
+                    bar.removeChild(oldProgress);
+                }
+
                 let progress = document.createElement("div");
+                progress.className = "progressBar";
                 progress.style.backgroundColor = "#03a0d6";
                 let barWidth = bar.offsetWidth * (rate / 100) - 32;
                 console.log(barWidth);
