@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         统计bilibili合集总时长与观看百分比
+// @name         bilibili-Count
 // @namespace    https://github.com/cuicui-V5/BilibiliCount
 // @version      0.2.5
 // @description  统计bilibili合集总时长与观看百分比
